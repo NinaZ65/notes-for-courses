@@ -29,10 +29,7 @@
   - 可以起到下采样效果
 
 综合 padding 和 stride，输出边长的一般公式是：（一般向下取整）
-
-$$
-\left\lfloor \frac{n+2p-k}{s} \right\rfloor + 1
-$$
+$$\left\lfloor \frac{n+2p-k}{s} \right\rfloor + 1$$
 
 这里 $n$ 是输入边长，$p$ 是 padding，$k$ 是卷积核边长，$s$ 是 stride。
 
@@ -59,10 +56,7 @@ $$
     $C_o \times C_i \times k_h \times k_w$
 
 参数量计算：
-
-$$
-params = C_o \times (k_w \times k_h \times C_i + 1)
-$$
+$$params = C_o \times (k_w \times k_h \times C_i + 1)$$
 
 这里 $C_o$ 是输出通道数，也就是卷积核个数；$C_i$ 是输入通道数；$k_w \times k_h$ 是卷积核空间大小；最后的 $+1$ 是每个卷积核对应一个 bias。
 
